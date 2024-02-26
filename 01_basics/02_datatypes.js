@@ -41,3 +41,31 @@ console.table([typeof(names), typeof(age), typeof(isEducated), typeof(isFather),
 
 //Primitive/Call type(string, number, boolean, null, undefined, bigint, Symbol)
 //Non-Primitive/Reference type(array, object, function)
+
+
+
+//++++++++++++++++++++++++++++Memory types++++++++++++++++++++++++++++++++++++++++++++++
+//Primitive datatypes(Stack memory ka use kartey hai)
+//Non-Primitive datatypes(Heap memory ka use kartey hai)
+
+let name0="Abhishek";
+let name1=name0; //copy pass ho rahi hai
+
+name0="Tiwari"
+
+console.log(name0, name1);
+
+
+
+
+let details={
+    FName:"Abhishek",
+    Lname:"Tiwari",
+    Uname:"im_abhishek"
+}
+let details1=details; //refrence pass ho raha hai
+
+details.Uname="abhi_tiwari"
+
+console.log(details);
+console.log(details1);
