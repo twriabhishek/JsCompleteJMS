@@ -28,3 +28,16 @@ console.table([typeof(names), typeof(age), typeof(isEducated), typeof(isFather),
 //Null ka datatype object aata hai magar undefined ka datatype undefined hi hota hai.
 
 
+
+
+
+
+//[Summary of datatypes]
+//Values memories m kaise store hoti hai aur kaise access hoti hai isi basis pparr datatypes are 2 types:
+
+//Primitive(wo datatypes hotey hai jiski value ko jab hum doosrey variable m assign kartey t value copy hoti hai)
+//Non-primitive(wo datatypes hotey hai jiski value ko jab hum doosrey variable m assign kartey t reference copy hoti hai)
+
+
+//Primitive/Call type(string, number, boolean, null, undefined, bigint, Symbol)
+//Non-Primitive/Reference type(array, object, function)
