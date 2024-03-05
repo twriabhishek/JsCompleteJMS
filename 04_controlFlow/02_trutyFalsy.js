@@ -33,7 +33,10 @@ console.log(false=='');
 console.log(0=='');
 
 
-
+// false===0
+// false===''
+// 0===''
+//Yeh sabhi false evaluate hoti hai.
 
 
 //Nullish coalescing operator(??):- handle karata hai null and undefined value ko
