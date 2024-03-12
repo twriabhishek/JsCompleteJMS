@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Press Event</title>
+  </head>
+  <body>
+    <h1>Press value in then keyboard</h1>
+    <h2>You Pressed:</h2>
+    <script>
+      const keyPressed = () => {
+        // Retrieve the value of the pressed key
+        const pressedKey = event.key;
+
+        // Find the h2 element
+        const h2Element = document.querySelector("h2");
+
+        // Append the pressed key value after the colon
+        h2Element.textContent = "You Pressed: " + pressedKey;
+
+        // Display the value in the console or wherever you want
+        console.log("Pressed key:", pressedKey);
+      };
+      window.addEventListener("keydown", keyPressed);
+    </script>
+  </body>
+</html>

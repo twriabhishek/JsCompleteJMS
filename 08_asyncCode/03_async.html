@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_async</title>
+  </head>
+  <body>
+    <h1>02_async</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    let clear;
+    document.querySelector("#start").addEventListener("click", function () {
+      const greet = (greeting) => {
+        console.log(greeting, Date.now());
+      };
+
+      clear = setInterval(greet, 1000, "Good Morning");
+      console.log("start");
+    });
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(clear); 
+      console.log("Stopped");
+    });
+  </script>
+</html>
+
+<!-- setinterval recieve three values call back, time, parameter -->

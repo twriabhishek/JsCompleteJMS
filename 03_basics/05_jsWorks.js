@@ -16,7 +16,7 @@ function addNumber(num1, num2){
 let result1=addNumber(val1, val2);
 let result2=addNumber(10,20);
 
-//First(Creation of global conttext):- complete js ka code global execution context m define hota hai means this m.
+//First(Creation of global context):- complete js ka code global execution context m define hota hai means this m.
 //Second(Memory creation phase):- uskey baad memory creation phase aata hai ismey sabhi variable create hotey hai but unki value
 //undefined initialize hoti hai and sabhi function bhi apni definition k sath space letey hai.
 //Third(Execution phase):- sabhi variable m values assign hoti hai aur complete code execute hota hai agar kahi function call

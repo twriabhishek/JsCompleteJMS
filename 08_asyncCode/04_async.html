@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_async</title>
+  </head>
+  <body style="background-color: antiquewhite;">
+    <h1>
+      Start should change the background in every second
+    </h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    let clear;
+    document.querySelector("#start").addEventListener("click", function () {
+      function generateRandomColor() {
+        // Generate random values for red, green, and blue
+        const bodyElement = document.body;
+        const r = Math.floor(Math.random() * 256); // Random value between 0 and 255
+        const g = Math.floor(Math.random() * 256); // Random value between 0 and 255
+        const b = Math.floor(Math.random() * 256); // Random value between 0 and 255
+
+        // Construct a CSS color string
+        const color = `rgb(${r}, ${g}, ${b})`;
+        console.log(color);
+        // Applying CSS styles programmatically
+        bodyElement.style.backgroundColor = color;
+      }
+
+      clear = setInterval(generateRandomColor, 1000);
+      console.log("start");
+    });
+
+    document.querySelector("#stop").addEventListener("click", function () {
+      clearInterval(clear);
+      clear=null
+      console.log("Stopped");
+    });
+
+  </script>
+</html>
