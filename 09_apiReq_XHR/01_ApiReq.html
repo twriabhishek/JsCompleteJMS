@@ -1,0 +1,75 @@
+<!-- API sirf ek talking language hai jisko use karkey 2 or more then 2 system jo different languages/environment m likhey hai, wo apas m communicate kartey hai. -->
+<!-- Fetch abhi new hai iskey pahley hum XMLHttpRequest bhejtey theeyy yeh legacy hai-->
+<!-- Ismey (XMLHttpRequest) AJAX use kartey hai -->
+
+<!-- XMLHttpRequest Status -->
+<!-- Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. -->
+
+<!-- Jab bhi data aata hai response m kisi api s then wo most of time string k form m hi hota hai. Usko hum apne usecase ke according json wagairah m change kartey hai -->
+
+
+<!-- Document core js ka part hi nahi hai. -->.
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>XMLHTTPSREQUEST</title>
+  </head>
+  <body>
+    <div class="card" style="width: 18rem">
+      <img src="" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const requestURL = "https://api.github.com/users/hiteshchoudhary";
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", requestURL);
+      xhr.onreadystatechange = function () {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+          const data = JSON.parse(this.responseText);
+          console.log(typeof data);
+          console.log(data);
+
+          //For altering html
+          document.querySelector(".card-img-top").src=data.avatar_url;
+          document.querySelector(".card-title").textContent=data.login;
+          document.querySelector(".card-text").textContent=data.avatar_url;
+        }
+      };
+      xhr.send();
+    </script>
+  </body>
+</html>
+
+
+<!-- complete js ka implementation c++ m kiya gaya hai. -->
+<!-- Means, javascript wrapper hai c++ par -->
+<!-- Node, Bun etc sabhi javascript ke runtime environment hai -->
+<!-- console.log() and other apis yeh sabhi core javascript ka part anhi hai yeh browser ka part hai-->
