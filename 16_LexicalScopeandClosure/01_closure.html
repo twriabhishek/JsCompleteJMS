@@ -1,0 +1,53 @@
+<!-- Closure:A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body></body>
+  <script>
+    //Lexical Scoping
+    // function init() {
+    //   var name = "Mozilla"; // name is a local variable created by init
+    //   function displayName() {
+    //     // displayName() is the inner function, that forms the closure
+    //     console.log(name); // use variable declared in the parent function
+    //   }
+    //   displayName();
+    // }
+    // init();
+
+
+    //Closure
+    function makeFunc() {
+      const name = "Mozilla";
+      function displayName() {
+        console.log(name);
+      }
+      return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+  </script>
+</html>
+
+<!-- Lexical Scoping -->
+<!-- init() creates a local variable called name and a function called displayName(). The displayName() function is an inner function that is defined inside init() and is available only within the body of the init() function. Note that the displayName() function has no local variables of its own. However, since inner functions have access to the variables of outer functions, displayName() can access the variable name declared in the parent function, init(). -->
+<!-- In layman term hum yeh kah saktey hai ki ancestors apni property desendent ko share karr saktey hai 
+but desendent apni property ancestors ko  share nahi kar saktey na koi property ek sibling s soori sbling m 
+bhi share nahi hoti yahi Lekical Scoping hoti hai  -->
+
+
+
+<!-- Closure -->
+<!-- Jab makeFunc() return karega then displayName ka single context nahi jabki complete lexical scope jata hai 
+and complete memory bhi jati hai isko hi closure kahtey hai-->
+
+<!-- Jab hum ek function return kartey hai then only wo function hi nahi return hota hai uska complete scope means Lexical scope retun
+hota hai isko hi closure kahtey hai-->
+
+
